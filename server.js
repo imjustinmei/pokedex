@@ -17,7 +17,6 @@ app.get('/', function (req, res) {
   var firstUrl = 'https://pokeapi.co/api/v2/pokemon?limit=15';
   let cached = cache.get(firstUrl);
   if (!cached) {
-    console.log('from api');
     axios
       .get(firstUrl)
       .then((response) => {
@@ -50,7 +49,6 @@ app.get('/', function (req, res) {
         res.render('main', { pokemon: pokemon });
       });
   } else {
-    console.log('from cache');
     cache.set('next', nextUrl);
     res.render('main', { pokemon: cached });
   }
@@ -61,7 +59,6 @@ app.post('/next', function (req, res) {
   let current = cache.take('next');
   let value = cache.get(current);
   if (!value) {
-    console.log('from api');
     axios
       .get(current)
       .then((response) => {
@@ -95,7 +92,6 @@ app.post('/next', function (req, res) {
         res.send({ pokemon: pokemon });
       });
   } else {
-    console.log('from cache');
     cache.set('next', value.next);
     res.send({ pokemon: value.pokemon });
   }
@@ -137,7 +133,6 @@ app.get('/pokemon/:id', function (req, res, next) {
         next();
       });
   } else {
-    console.log('from cache');
     res.render('pokemon', { pokemon: cached });
   }
 });
