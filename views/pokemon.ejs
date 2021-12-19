@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="<%= pokemon.icon %>" />
+    <title><%= pokemon.name %></title>
+    <link rel="stylesheet" href="/css/stats.css" />
+    <link rel="stylesheet" href="/css/types.css" />
+    <link rel="stylesheet" href="/css/pokemon.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <img
+          class="image"
+          src="<%= pokemon.sprite %>"
+          alt="<%=pokemon.name%>"
+        />
+        <div class="bottom">
+          <p class="name"><%= pokemon.name%> - # <%= pokemon.id %></p>
+          <div class="types">
+            <% pokemon.types.forEach((type) => { %>
+            <p class="<%= type %>"><%= type %></p>
+            <% }) %>
+          </div>
+        </div>
+        <div class="attributes">
+          Height: <%= pokemon.height%> Weight: <%= pokemon.weight%>
+        </div>
+      </div>
+      <div class="stats">
+        <%pokemon.stats.forEach((item)=>{ %>
+        <div class="stat">
+          <p class="statName <%=item.stat.name%>">
+            <%=item.stat.name%>: <%= item[ 'base_stat' ]%>
+          </p>
+          <div
+            class="bar <%=item.stat.name%>"
+            id="<%=item.stat.name%>"
+            style="--width: <%= item[ 'base_stat' ]%>"
+          ></div>
+        </div>
+        <% })%>
+      </div>
+    </div>
+    <form class="return" action="/">
+      <input type="submit" value="Return to Pokedex" />
+    </form>
+  </body>
+</html>

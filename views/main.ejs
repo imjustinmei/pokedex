@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Pokedex</title>
+    <link rel="icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/types.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="/javascript/index.js"></script>
+  </head>
+  <body>
+    <div class="top">
+      <div class="inside">Pokedex</div>
+      <div class="github">
+        <a href="https://github.com/imjustinmei"
+          ><img src="images/github32.png" alt="githublogo"
+        /></a>
+      </div>
+    </div>
+    <div>
+      <form class="search" action="/search" method="post">
+        <input
+          class="field"
+          type="text"
+          name="input"
+          placeholder="Search for a pokemon..."
+        />
+        <button class="button" name="submit">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            fill="currentColor"
+            class="bi bi-search"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+            />
+          </svg>
+        </button>
+      </form>
+    </div>
+    <div id="container">
+      <% pokemon.forEach((item)=>{ %>
+      <div class="card">
+        <a href="/pokemon/<%=item.name%>">
+          <img class="image" src="<%= item.sprite %>" alt="<%= item.name %>" />
+        </a>
+        <div class="bottom">
+          <p class="name"><%= item.name %> - # <%= item.id %></p>
+          <div class="types">
+            <% item.types.forEach((type) => { %>
+            <p class="<%= type %>"><%= type %></p>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+      <%})%>
+    </div>
+  </body>
+</html>
