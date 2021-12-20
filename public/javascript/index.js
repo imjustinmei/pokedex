@@ -9,6 +9,11 @@ window.onscroll = function (ev) {
           let card = document.createElement('div');
           card.className = 'card';
 
+          //id
+          let id = document.createElement('div');
+          id.className = 'id';
+          id.innerHTML = '# ' + pokemon.id;
+
           //image
           let image = document.createElement('img');
           image.className = 'image';
@@ -20,7 +25,7 @@ window.onscroll = function (ev) {
           bottom.className = 'bottom';
           let name = document.createElement('p');
           name.className = 'name';
-          name.innerHTML = pokemon.name + ' - # ' + pokemon.id;
+          name.innerHTML = pokemon.name;
 
           //types
           let typeDiv = document.createElement('div');
@@ -33,6 +38,7 @@ window.onscroll = function (ev) {
           });
           bottom.append(name);
           bottom.append(typeDiv);
+          card.append(id);
           card.append(image);
           card.append(bottom);
           document.getElementById('container').append(card);

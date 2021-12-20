@@ -51,11 +51,12 @@
     <div id="container">
       <% pokemon.forEach((item)=>{ %>
       <div class="card">
+        <div class="id"># <%= item.id %></div>
         <a href="/pokemon/<%=item.name%>">
           <img class="image" src="<%= item.sprite %>" alt="<%= item.name %>" />
         </a>
         <div class="bottom">
-          <p class="name"><%= item.name %> - # <%= item.id %></p>
+          <p class="name"><%= item.name %></p>
           <div class="types">
             <% item.types.forEach((type) => { %>
             <p class="<%= type %>"><%= type %></p>
