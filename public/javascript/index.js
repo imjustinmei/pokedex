@@ -14,6 +14,10 @@ window.onscroll = function (ev) {
           id.className = 'id';
           id.innerHTML = '# ' + pokemon.id;
 
+          //link
+          let link = document.createElement('a');
+          link.href = '/pokemon/' + pokemon.name;
+
           //image
           let image = document.createElement('img');
           image.className = 'image';
@@ -36,10 +40,11 @@ window.onscroll = function (ev) {
             p.innerHTML = type;
             typeDiv.append(p);
           });
+          link.append(image);
           bottom.append(name);
           bottom.append(typeDiv);
           card.append(id);
-          card.append(image);
+          card.append(link);
           card.append(bottom);
           document.getElementById('container').append(card);
         });
