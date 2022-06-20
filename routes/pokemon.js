@@ -1,11 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const axios = require('axios');
-const _ = require('lodash');
 
 // /pokemon Route
 router.get('/:id', (req, res, next) => {
-  var input = _.lowerCase(req.params.id);
+  var input = req.params.id.toLowerCase();
   let cached = pokemon.get(input);
   if (!cached) {
     axios
@@ -22,16 +21,13 @@ router.get('/:id', (req, res, next) => {
               ...item,
               stat: {
                 ...item.stat,
-                name: _.upperFirst(item.stat.name),
+                name: item.stat.name.charAt(0).toUpperCase() + item.stat.name.slice(1),
               },
             };
           }),
           sprite: result.sprites.other['official-artwork'].front_default,
           icon: result.sprites['front_default'],
-          types: result.types.map(
-            (slot) =>
-              slot.type.name.charAt(0).toUpperCase() + slot.type.name.slice(1)
-          ),
+          types: result.types.map((slot) => slot.type.name.charAt(0).toUpperCase() + slot.type.name.slice(1)),
         };
         sucess = pokemon.set(input, object);
         res.render('pokemon', { pokemon: object });

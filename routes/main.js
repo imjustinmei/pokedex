@@ -6,8 +6,8 @@ const axios = require('axios');
 router.get('/', (req, res) => {
   var firstUrl = 'https://pokeapi.co/api/v2/pokemon?limit=15';
   var nextUrl = 'https://pokeapi.co/api/v2/pokemon?offset=15&limit=15';
-  let cached = cache.get(firstUrl);
   if (!cached) {
+    console.log('uncached');
     axios
       .get(firstUrl)
       .then((response) => {
