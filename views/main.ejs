@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokedex</title>
     <link rel="icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="/css/main.css" />
@@ -24,12 +25,19 @@
     </div>
     <div>
       <form class="search" action="/search" method="post">
-        <input
-          class="field"
-          type="text"
-          name="input"
-          placeholder="Search for a pokemon..."
-        />
+        <div class="autocomplete">        
+          <input
+            id="field"
+            type="text"
+            name="input"
+            minlength="1"
+            autocomplete="off"
+            required="required"
+            onkeyup="updateResults(this.value)"
+            placeholder="Search for a pokemon..."
+          />
+          <div id="items">...</div>
+        </div>
         <button class="button" name="submit">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -46,6 +54,9 @@
         </button>
       </form>
     </div>
+    <noscript>
+      <div>You need to enable JavaScript to use infinite scroll.</div>
+    </noscript>
     <div id="container">
       <% pokemon.forEach((item)=>{ %>
       <div class="card">
@@ -66,5 +77,6 @@
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript" src="/javascript/index.js"></script>
+    <script type="text/javascript" src="/javascript/filter.js"></script>
   </body>
 </html>
