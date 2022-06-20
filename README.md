@@ -7,9 +7,10 @@ Pokedex web app with PokeAPI and Express
 # Install
 
 Run `npm install` to install dependencies  
-Run node/nodemon server.js  
+Run `npm run dev`  
 Navigate to `http://localhost:3000/`
 
 # Example
+![example site](https://github.com/imjustinmei/pokedex/blob/main/Images/example.png?raw=true)
 
 https://pokedex-imjustinmei.herokuapp.com/
