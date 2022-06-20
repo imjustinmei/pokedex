@@ -21,7 +21,7 @@ body {
 .attributes {
   border-radius: 0 0 5px 5px;
   font-size: 1.5em;
-  color: #ea5455;
+  color: #00adb5;
   background-color: #cbf1f5;
   text-align: center;
 }
@@ -41,15 +41,17 @@ body {
 }
 .statName {
   width: 23%;
+  padding: 1px;
+  border-radius: 2px;
   margin-right: 20px;
   text-align: center;
-  border-radius: 2px;
 }
 .bar {
   text-align: center;
   width: calc(var(--width) / 255 * 75%);
   height: 1em;
   border-radius: 2px;
+  padding: 3px;
 }
 .card {
   display: inline-block;
@@ -90,11 +92,15 @@ body {
 .return {
   text-align: center;
 }
-.return input {
-  color: #222831;
+.return a {
+  width: 20%;
   border: 0px;
   border-radius: 5px;
-  font-size: 2em;
-  padding: 0.5em;
+  padding: 2vh;
+  display: block;
+  margin: 1vh auto;
+  font-size: 4vh;
+  color: #222831;
+  text-decoration: none;
   background-color: #00adb5;
 }
