@@ -18,8 +18,14 @@ body {
   margin-left: 11%;
   width: 71%;
   padding: 1%;
-  font-size: 3em;
+  font-size: 6vh;
   text-align: left;
+}
+.github {
+  vertical-align: middle;
+  max-width: 5vw;
+  min-width: 5vw;
+  width: 100%;
 }
 @media screen and (max-width: 720px) {
   #container {
@@ -29,13 +35,17 @@ body {
 /* search styling */
 .search {
   display: flex;
-  padding: 1em 0;
+  padding: 1vw 0;
   align-items: center;
   justify-content: center;
   background-color: #e4f9f5;
 }
+.search ::placeholder {
+  color: #393e46;
+}
 #field {
   width: 100%;
+  height: 1vw;
   caret-color: #71c9ce;
   border: solid #393e46 3px;
   background-color: rgba(0, 0, 0, 0);
@@ -57,16 +67,13 @@ body {
   box-shadow: 0 0 10px #a6e3e9;
   justify-content: space-evenly;
 }
-.suggestion:hover {
-  text-decoration: underline;
-}
 #field:focus {
   outline: none;
   border-color: #71c9ce;
   box-shadow: 0 0 10px #a6e3e9;
 }
 .autocomplete {
-  width: 40%;
+  width: 45%;
   margin-right: 2em;
   position: relative;
 }
@@ -75,8 +82,8 @@ body {
   color: #393e46;
   text-decoration: none;
 }
-.search ::placeholder {
-  color: #393e46;
+.suggestion:hover {
+  text-decoration: underline;
 }
 .button {
   height: 100%;
@@ -106,10 +113,12 @@ body {
   box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
 }
 .id {
-  font-size: 1.75vw;
   display: flex;
-  justify-content: center;
+  font-size: 1.75vw;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   align-items: center;
+  justify-content: center;
   background: #cbf1f5;
 }
 .image {
@@ -118,7 +127,8 @@ body {
 }
 .bottom {
   padding: 1%;
-  border-radius: inherit;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   background-color: #cbf1f5;
 }
 .name {
@@ -137,7 +147,7 @@ body {
   width: 40%;
   padding: 0.8%;
   margin: 0.8%;
-  font-size: 2vw;
+  font-size: 1.5vw;
   border: inherit solid;
   border-radius: 6.5px;
 }
