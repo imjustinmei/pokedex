@@ -37,7 +37,7 @@
     "get-stream": "^4.1.0",
     "glob-parent": "^5.1.2",
     "global-dirs": "^3.0.0",
-    "got": "^9.6.0",
+    "got": "^11.8.5",
     "graceful-fs": "^4.2.10",
     "has-flag": "^3.0.0",
     "has-yarn": "^2.1.0",
