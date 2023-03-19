@@ -11,6 +11,7 @@ Run `npm run dev`
 Navigate to `http://localhost:3000/`
 
 # Example
-![example site](https://github.com/imjustinmei/pokedex/blob/main/Images/example.png?raw=true)
 
-https://pokedex-imjustinmei.herokuapp.com/
+## https://pokdex.onrender.com/
+
+![example site](https://github.com/imjustinmei/pokedex/blob/main/Images/example.png?raw=true)
