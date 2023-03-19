@@ -41,7 +41,7 @@
     "graceful-fs": "^4.2.10",
     "has-flag": "^3.0.0",
     "has-yarn": "^2.1.0",
-    "http-cache-semantics": "^4.1.0",
+    "http-cache-semantics": "^4.1.1",
     "ignore-by-default": "^1.0.1",
     "import-lazy": "^2.1.0",
     "imurmurhash": "^0.1.4",
