@@ -11,30 +11,32 @@ window.addEventListener('click', function (event) {
 });
 
 function autocomplete(input) {
-  if (input) {
-    var check = new RegExp(input.toLowerCase());
-    var matches = [];
-    for (let i = 0; i < pokemonNames.length; i++) {
-      if (matches.length < 11) {
-        if (pokemonNames[i].toLowerCase().match(check)) {
-          matches.push(pokemonNames[i]);
-        }
-      } else {
-        break;
-      }
-    }
-    return matches;
+  if (!input) return [];
+
+  const value = input.toLowerCase();
+  const start = [];
+  const contains = [];
+
+  for (let i = 0; i < pokemonNames.length; i++) {
+    if (start.length + contains.length == 10) break;
+
+    const check = pokemonNames[i].toLowerCase();
+    if (check.startsWith(value)) start.push(pokemonNames[i]);
+    else if (check.includes(value)) contains.push(pokemonNames[i]);
   }
-  return [];
+
+  return [...start, ...contains];
 }
 
-var updating = false;
+let updating = false;
 function updateResults(value) {
   if (!updating) {
     updating = true;
+
     let newItems = '';
     let items = document.getElementById('items');
     let matches = autocomplete(value);
+
     if (!matches.length) {
       items.innerHTML = '...';
       setTimeout(() => {
@@ -42,6 +44,7 @@ function updateResults(value) {
       }, 50);
       return;
     }
+
     for (let i = 0; i < matches.length; i++) {
       newItems += '<a class="suggestion" href="/pokemon/' + matches[i] + '">' + matches[i] + '</a>';
     }
