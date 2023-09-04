@@ -9,47 +9,26 @@
     <link rel="stylesheet" href="/css/types.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" />
+    <script type="text/javascript" src="/javascript/scroll.js" defer></script>
+    <script type="text/javascript" src="/javascript/filter.js" defer></script>
+    <script>
+      let next = '<%= url %>';
+    </script>
   </head>
   <body>
     <div class="top">
       <div class="inside">Pokedex</div>
-      <div>
-        <a href="https://github.com/imjustinmei/pokedex">
-          <img src="images/github32.png" alt="githublogo" class="github"/>
-        </a>
-      </div>
     </div>
     <div>
       <form class="search" action="/search" method="post">
-        <div class="autocomplete">        
-          <input
-            id="field"
-            type="text"
-            name="input"
-            minlength="1"
-            autocomplete="off"
-            required="required"
-            onkeyup="updateResults(this.value)"
-            placeholder="Search for a pokemon..."
-          />
+        <div class="autocomplete">
+          <input id="field" type="text" name="input" minlength="1" autocomplete="off" required="required" onkeyup="updateResults(this.value)" placeholder="Search for a pokemon..." />
           <div id="items">...</div>
         </div>
         <button class="button" name="submit">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
-            fill="currentColor"
-            class="bi bi-search"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-            />
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
           </svg>
         </button>
       </form>
@@ -57,26 +36,6 @@
     <noscript>
       <div>You need to enable JavaScript to use infinite scroll.</div>
     </noscript>
-    <div id="container">
-      <% pokemon.forEach((item)=>{ %>
-      <div class="card">
-        <div class="id"># <%= item.id %></div>
-        <a href="/pokemon/<%=item.name%>">
-          <img class="image" src="<%= item.sprite %>" alt="<%= item.name %>" />
-        </a>
-        <div class="bottom">
-          <p class="name"><%= item.name %></p>
-          <div class="types">
-            <% item.types.forEach((type) => { %>
-            <p class="<%= type %>"><%= type %></p>
-            <% }) %>
-          </div>
-        </div>
-      </div>
-      <%})%>
-    </div>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script type="text/javascript" src="/javascript/index.js"></script>
-    <script type="text/javascript" src="/javascript/filter.js"></script>
+    <div id="container"></div>
   </body>
 </html>

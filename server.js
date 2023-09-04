@@ -1,5 +1,4 @@
 const express = require('express');
-const nodeCache = require('node-cache');
 
 const app = express();
 
@@ -7,12 +6,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 
-global.cache = new nodeCache({ stdTTL: 604800, checkperiod: 86400 });
-global.pokemon = new nodeCache({ stdTTL: 604800, checkperiod: 86400 });
-
 // routes
 app.use('/', require('./routes/main'));
-app.use('/next', require('./routes/next'));
 app.use('/pokemon', require('./routes/pokemon'));
 app.use('/search', require('./routes/search'));
 

@@ -2,53 +2,24 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="<%= pokemon.icon %>" />
-    <title><%= pokemon.name %></title>
+    <link rel="icon" id="favicon" href="#" />
+    <title>Pokemon</title>
     <link rel="stylesheet" href="/css/stats.css" />
     <link rel="stylesheet" href="/css/types.css" />
     <link rel="stylesheet" href="/css/pokemon.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet" />
+    <script type="text/javascript" src="/javascript/search.js" defer></script>
+    <script defer>
+      const pokemon = '<%= pokemon %>';
+    </script>
+    <div class="container">
+      <div id="card"></div>
+      <div id="stats"></div>
+    </div>
   </head>
   <body>
-    <div class="container">
-      <div class="card">
-        <img
-          class="image"
-          src="<%= pokemon.sprite %>"
-          alt="<%=pokemon.name%>"
-        />
-        <div class="bottom">
-          <p class="name"><%= pokemon.name%> - # <%= pokemon.id %></p>
-          <div class="types">
-            <% pokemon.types.forEach((type) => { %>
-            <p class="<%= type %>"><%= type %></p>
-            <% }) %>
-          </div>
-        </div>
-        <div class="attributes">
-          Height: <%= pokemon.height/10%> m Weight: <%= pokemon.weight/10%> kg
-        </div>
-      </div>
-      <div class="stats">
-        <%pokemon.stats.forEach((item)=>{ %>
-        <div class="stat">
-          <p class="statName <%=item.stat.name%>">
-            <%=item.stat.name%>: <%= item[ 'base_stat' ]%>
-          </p>
-          <div
-            class="bar <%=item.stat.name%>"
-            id="<%=item.stat.name%>"
-            style="--width: <%= item[ 'base_stat' ]%>"
-          ></div>
-        </div>
-        <% })%>
-      </div>
-    </div>
-    <div class="return"><a href="/">Return to pokedex</a></div>
+    <div class="return"><a href="/">Return</a></div>
   </body>
 </html>
