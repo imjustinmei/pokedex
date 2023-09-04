@@ -12,6 +12,6 @@ Navigate to `http://localhost:3000/`
 
 # Example
 
-## https://pokdex.onrender.com/
+## [live site](https://pokedex-58q7.onrender.com)
 
 ![example site](https://github.com/imjustinmei/pokedex/blob/main/Images/example.png?raw=true)
