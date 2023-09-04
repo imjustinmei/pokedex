@@ -4,23 +4,19 @@ body {
   flex-direction: column;
   display: flex;
 }
-
 .error {
   color: #393e46;
   font-family: 'Source Sans Pro', sans-serif;
   text-align: center;
 }
-
 .error h1 {
   margin-bottom: 0px;
   font-size: 8em;
 }
-
 .error p {
   margin: 0.5em;
   font-size: 4em;
 }
-
 .return input {
   color: #222831;
   border: 0px;

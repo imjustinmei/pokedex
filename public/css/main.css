@@ -11,21 +11,14 @@ body {
 }
 .top {
   display: flex;
-  align-items: center;
+  justify-content: center;
   background-color: #a8d8ea;
 }
 .inside {
-  margin-left: 11%;
-  width: 71%;
+  width: 85%;
   padding: 1%;
+  text-align: center;
   font-size: 6vh;
-  text-align: left;
-}
-.github {
-  vertical-align: middle;
-  max-width: 5vw;
-  min-width: 5vw;
-  width: 100%;
 }
 @media screen and (max-width: 720px) {
   #container {
@@ -48,7 +41,7 @@ body {
   height: 1vw;
   caret-color: #71c9ce;
   border: solid #393e46 3px;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba (249, 247, 247, 0);
   padding: 0.5em 0 0.5em 1em;
   font-size: 1.5em;
   border-radius: 10px;
@@ -57,7 +50,7 @@ body {
   z-index: 2;
   width: 100%;
   display: none;
-  border: solid #FFE2E2 3px;
+  border: solid #ffe2e2 3px;
   padding-left: 1em;
   font-size: 1.5em;
   position: absolute;
@@ -78,7 +71,7 @@ body {
   position: relative;
 }
 .suggestion {
-  margin: .25em 0;
+  margin: 0.25em 0;
   color: #393e46;
   text-decoration: none;
 }
@@ -117,7 +110,6 @@ body {
   font-size: 1.75vw;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  align-items: center;
   justify-content: center;
   background: #cbf1f5;
 }
