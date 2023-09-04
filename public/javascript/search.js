@@ -86,9 +86,10 @@ function render(pokemon) {
   bottom.append(types);
   card.append(bottom);
   card.append(attributes);
-  document.getElementById('favicon').href = pokemon.icon;
   sprite = pokemon.sprite;
   shiny = sprite.replace('/official-artwork/', '/official-artwork/shiny/');
+  document.getElementById('favicon').href = pokemon.icon;
+  document.title = pokemon.name;
 }
 
 search(pokemon);
