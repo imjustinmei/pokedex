@@ -2,7 +2,7 @@
 
 Pokedex web app with PokeAPI and Express
 
-- Express, Axios, and NodeCache
+- Express, Fetch, and Cache API
 
 # Install
 
